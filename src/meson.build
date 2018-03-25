@@ -1,5 +1,6 @@
 src_files = [
-    'main.c'
+    'main.c',
+    'dashboard-app.c',
 ]
 
 executable('producers-dashboard',

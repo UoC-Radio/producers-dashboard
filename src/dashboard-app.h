@@ -15,14 +15,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "dashboard-app.h"
+#ifndef _DASHBOARD_APP_H_
+#define _DASHBOARD_APP_H_
+
 #include <gtk/gtk.h>
 
-gint
-main (gint argc, gchar *argv[])
-{
-  g_autoptr (DashboardApp) app;
+#define DASHBOARD_TYPE_APP dashboard_app_get_type ()
+G_DECLARE_FINAL_TYPE (DashboardApp, dashboard_app, DASHBOARD, APP,
+    GtkApplication);
 
-  app = dashboard_app_new ();
-  return g_application_run (G_APPLICATION (app), argc, argv);
-}
+DashboardApp *dashboard_app_new (void);
+
+#endif
+
